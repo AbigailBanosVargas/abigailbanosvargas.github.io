@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Market Questionnaire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="corn.png" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="formulario.css">
+    <script>
+    // Le tuve que preguntar a la IA esto por que mi firefox guardaba las respuestas de los radio o select.
+    window.addEventListener('load', function() {
+        document.querySelector('form').reset();
+        localStorage.clear(); 
+    });
+</script>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="form-card">
+            <div class="form-header">
+                <img src="Logo.png">
+                <p>Fill out the details below please.</p>
+            </div>
+
+            <form action="#" method="POST">
+
+                <!-- Contacto -->
+                <div class="form-section">
+                    <h3>01. Contact Details</h3>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="name">Business Name</label>
+                            <input type="text" id="name" name="name" placeholder="e.g : Fresh Market" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Contact Person</label>
+                            <input type="email" id="email" name="email" placeholder="e.g : Jane Doe" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="name">Contact Email</label>
+                            <input type="text" id="name" name="name" placeholder="e.g : janedoe@gmail.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Contact Phone Number</label>
+                            <input type="email" id="email" name="email" placeholder="e.g : +1685235569" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget and details -->
+                <div class="form-section">
+                    <h3>02. Project Scope</h3>
+                    <div class="input-group">
+                        <label for="budget">Estimated Budget</label>
+                        <select id="lists" name="budget">
+                            <option value="" disabled selected>Select a range...</option>
+                            <option>Small Project (<$5k) </option>
+                            <option>Medium Project ($5k - $15k)</option>
+                            <option>Feature Rich Project ($15k - $30k)</option>
+                            <option>Complex Multi-Platform ($30k+)</option>
+                        </select>
+                        <label for="time">Estimated Development Time</label>
+                        <select id="lists" name="time">
+                            <option value="" disabled selected>Select a range...</option>
+                            <option>Up to 3 months</option>
+                            <option>Up to 6 months</option>
+                            <option>Up to 12 months</option>
+                            <option>+1 year development</option>
+                        </select>
+                        <div>
+                            <label>Do you have already another application at work?</label>
+                            </br>
+                            <input type="radio" name="app"><label for="app">Yes</label></input>
+                            <input type="radio" name="app" checked><label for="app">No</label></input>
+                        </div>
+                        <label>If the last answer was positive. How would you like to tackle the transition?</label>
+                        <textarea name="trans" rows="3" cols="45" placeholder="We would like to migrated by..."></textarea>
+                        <label>Which color scheme would you like? Use three to four maximun.</label>
+                        <textarea name="scheme" rows="3" cols="45" placeholder="We would like to use red, yellow, white..."></textarea>
+                        <div>
+                            <label>Would you require dark mode in your application?</label>
+                        </br>
+                            <input type="radio" name="dark"><label for="app">Yes</label></input>
+                            <input type="radio" name="dark" checked><label for="app">No</label></input>
+                        </br>
+                            <label>Would you require accesibility features in your application?</label>
+                        </br>
+                            <input type="radio" name="accesibility"><label for="app">Yes</label></input>
+                            <input type="radio" name="accesibility" checked><label for="app">No</label></input>
+                        </div>
+                        <label>If the last answer was positive. Which type of accesibility features would you need?</label>
+                        <textarea name="acfeatu" rows="3" cols="45" placeholder="We would need some accesibility features for blind people..."></textarea>
+                        <div>
+                            <label>Have you any preference in database engine to use?</label>
+                            </br>
+                            <input type="radio" name="backend" checked><label for="app">MySQL</label></input>
+                            <input type="radio" name="backend"><label for="app">PostgreSQL</label></input>
+                            <input type="radio" name="backend"><label for="app">Oracle SQL</label></input>
+                            <input type="radio" name="backend"><label for="app">Microsoft SQL</label></input>
+                            <input type="radio" name="backend"><label for="app">Other</label></input>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Inventory -->
+                <div class="form-section"></div>
+                <h3>03. Inventory</h3>
+                <div class="input-group">
+                    <label>Would you like to separate the items by categories? If so write down what would you want.</label>
+                    <textarea name="categorie" rows="3" cols="45" placeholder="We would like food, cosmetics, home..."></textarea>
+                    <label>How are items currently identified?</label>
+                    <textarea name="identified" rows="3" cols="45" placeholder="e.g : Barcodes, QR codes, RFIDs..."></textarea>
+                    <label>Do you need to keep track of expirations dates?</label>
+                    <div>
+                        <input type="radio" name="expi"><label for="app">Yes</label></input>
+                        <input type="radio" name="expi" checked><label for="app">No</label></input>
+                    </div>
+                </div>
+
+                <!-- Finances & Stock -->
+                <div class="form-section"></div>
+                <h3>04. Finaces & Stock</h3>
+                <div class="input-group">
+                    <label>Would you like the application to keep a record of monthly and yearly revenue?</label>
+                    <div>
+                        <input type="radio" name="money"><label for="app">Yes</label></input>
+                        <input type="radio" name="money" checked><label for="app">No</label></input>
+                    </div>
+                    <label>If the last one was positive. Would you like a more detailed record?</label>
+                    <div>
+                        <input type="radio" name="record"><label for="app">Yes</label></input>
+                        <input type="radio" name="record" checked><label for="app">No</label></input>
+                    </div>
+                    <label>If the last one was positive. Would you like our help in financial advice?</label>
+                    <div>
+                        <input type="radio" name="advice"><label for="app">Yes</label></input>
+                        <input type="radio" name="advice" checked><label for="app">No</label></input>
+                    </div>
+                    <label>Would you like the application to give you a notice when low stock?</label>
+                    <div>
+                        <input type="radio" name="stock"><label for="app">Yes</label></input>
+                        <input type="radio" name="stock" checked><label for="app">No</label></input>
+                    </div>
+                    <label>If the last question was answer positive. At which rate would you need the notice?</label>
+                    <select id="lists" name="timeStock">
+                            <option value="" disabled selected>Select a range...</option>
+                            <option>2 days before run out</option>
+                            <option>5 days before run out</option>
+                            <option>1 week before run out</option>
+                            <option>2 week before run out</option>
+                    </select>
+                    <label>If you want notice of run out. Would you like to have the alert be sent only to the pc or also mobiles?</label>
+                    <div>
+                        <input type="radio" name="alert"><label for="app">Yes</label></input>
+                        <input type="radio" name="alert" checked><label for="app">No</label></input>
+                    </div>
+                    <label>Would you want the application to have a way to make direct contact with the supplier?</label>
+                    <div>
+                        <input type="radio" name="supplier"><label for="app">Yes</label></input>
+                        <input type="radio" name="supplier" checked><label for="app">No</label></input>
+                    </div>
+                </div>
+                 
+                <!-- Security -->
+                <div class="form-section"></div>
+                <h3>05. Security</h3>
+                <div class="input-group">
+                    <label>Who will be using the app?</label>
+                    <textarea name="users" rows="3" cols="45" placeholder="e.g : Clerks, Warehouse Manager, Store Owners..?"></textarea>
+                    <label>Do you need heriarchical access level? Can the cashier change the prices or similar?</label>
+                    <div>
+                        <input type="radio" name="access"><label for="app">Yes</label></input>
+                        <input type="radio" name="access" checked><label for="app">No</label></input>
+                    </div>
+                    <label>Would you like users to log in with password/pin/key?</label>
+                    <div>
+                        <input type="radio" name="login"><label for="app">Yes</label></input>
+                        <input type="radio" name="login" checked><label for="app">No</label></input>
+                    </div>
+                </div>
+
+                <div class="form-section"></div>
+                <h3>06. Integration</h3>
+                <div class="input-group">
+                    <label>What will be the hardware this app will be running on?</label>
+                    <textarea name="hardware" rows="3" cols="45" placeholder="e.g : Tablet, desktop PC, Work Phones..."></textarea>
+                    <label>Does the app need to integrate additional hardware?</label>
+                    <textarea name="addiotional" rows="3" cols="45" placeholder="e.g : Receipt printers, Barcode Scanners..?"></textarea>
+                    <label>Do you need automatic backup to your own or outsourced cloud?</label>
+                    <div>
+                        <input type="radio" name="backup"><label for="app">Yes</label></input>
+                        <input type="radio" name="backup" checked><label for="app">No</label></input>
+                    </div>
+                    <label>If the last questions is positive. Specify the system you will be using:</label>
+                    <textarea name="system" rows="3" cols="45" placeholder="e.g : Google Drive, Apple Cloud, My own cloud..."></textarea>
+                    <label>Does this application will be used in one store or in multiples stores simultaneously?</label>
+                    <div>
+                        <input type="radio" name="simu"><label for="app">Yes</label></input>
+                        <input type="radio" name="simu" checked><label for="app">No</label></input>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="submit-btn">Let us know your idea!</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- BANISHED TO THE SHADOW REALM
+<div class="form-section">
+                    <h3>02. Target Platforms</h3>
+                    <div class="selection-grid">
+                        <label class="selection-card">
+                            <input type="checkbox" name="platform" value="iOS">
+                            <span class="card-content">
+                                <span class="card-title">iOS App</span>
+                                <span class="card-subtitle">iPhone & iPad</span>
+                            </span>
+                        </label>
+
+                        <label class="selection-card">
+                            <input type="checkbox" name="platform" value="Android">
+                            <span class="card-content">
+                                <span class="card-title">Android App</span>
+                                <span class="card-subtitle">Samsung, Pixel, etc.</span>
+                            </span>
+                        </label>
+
+                        <label class="selection-card">
+                            <input type="checkbox" name="platform" value="Web">
+                            <span class="card-content">
+                                <span class="card-title">Web App</span>
+                                <span class="card-subtitle">Accessible via Browser</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                        <h3>03. Key Features Needed</h3>
+                        <div class="tag-container">
+                            <label class="tag-checkbox">
+                                <input type="checkbox" name="features" value="Login"><span>User Login</span></label>
+                            <label class="tag-checkbox"><input type="checkbox" name="features"
+                                    value="Payments"><span>Payments</span></label>
+                            <label class="tag-checkbox"><input type="checkbox" name="features" value="Chat"><span>Chat /
+                                    Messaging</span></label>
+                            <label class="tag-checkbox"><input type="checkbox" name="features" value="Maps"><span>Maps &
+                                    GPS</span></label>
+                            <label class="tag-checkbox"><input type="checkbox" name="features" value="Push"><span>Push
+                                    Notifications</span></label>
+                            <label class="tag-checkbox"><input type="checkbox" name="features" value="Admin"><span>Admin
+                                    Panel</span></label>
+                            <label class="tag-checkbox"><input type="checkbox" name="features"
+                                    value="Camera"><span>Camera Access</span></label>
+                            <label class="tag-checkbox"><input type="checkbox" name="features"
+                                    value="Offline"><span>Offline Mode</span></label>
+                        </div>
+                    </div>
+-->
